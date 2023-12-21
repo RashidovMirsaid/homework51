@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Ball from './components/Ball/Ball';
+import './assets/global.css';
 
 function App() {
-	const firstNumbers: number = [5, 11, 16, 23, 32];
+	const firstNumbers: number[] = [5, 11, 16, 23, 32];
 	const [number, setNumber] = useState<number[]>(firstNumbers);
 
 	const generateRandomNumbers = () => {
@@ -24,12 +25,14 @@ function App() {
 
 	return (
 		<div className='App'>
-			<Ball number={number[0]} />
-			<Ball number={number[1]} />
-			<Ball number={number[2]} />
-			<Ball number={number[3]} />
-			<Ball number={number[4]} />
-			<button onClick={changeNumbers}>Change numbers</button>
+			<div className='container'>
+				<Ball number={number[0]} />
+				<Ball number={number[1]} />
+				<Ball number={number[2]} />
+				<Ball number={number[3]} />
+				<Ball number={number[4]} />
+				<button onClick={changeNumbers}>Change numbers</button>
+			</div>
 		</div>
 	);
 }
